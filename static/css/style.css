@@ -1,0 +1,222 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0 20px;
+    background-color: #fff;
+  }
+
+  header {
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  .logo img {
+    
+    width: 311px;
+    height: 192px;
+    left: 600px;
+  }
+
+  .sous_titre {
+    color:  #0C5E69;
+    width: 117;
+    height: 28;
+    top: 131px;
+    left: 697px;
+    font-family: Gothic A1;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 28px;
+    letter-spacing: 0%;
+    margin-top: -70px;
+
+  }
+
+  .cards {
+    display: flex ;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    /*margin: 30px 0;*/
+  }
+
+  .card {
+    background-color: white;
+    box-shadow: 0 -1px 5px rgba(0,0,0,0.1);
+    width: 300px;
+    text-align: center;
+   /* border-top: 10px solid #065c64;
+   */
+    border-radius: 8px;
+    
+  }
+
+  .card h3 {
+    margin: -2px 0 5px;
+    color: #fff;
+   background-color: #065c64;
+   padding: 20px;
+   font-family: Gothic A1;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 0%;
+
+    
+  }
+
+  .card p {
+    
+  font-weight: bold;
+  font-family: Gothic A1;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 0%;
+
+  }
+
+  h2 {
+    color: #d2c400;
+    margin-top: 50px;
+    font-family: Gothic A1;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0%;
+
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    margin-bottom: 40px;
+  }
+
+  th {
+    background-color: #065c64;
+    color: white;
+    padding: 12px;
+    text-align: left;
+  }
+
+  td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .btn-delete {
+    background-color: #f44336;
+    border: none;
+    color: white;
+    padding: 5px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+  .ajouter {
+    color: #d2c400;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .ajouter span {
+    margin-left: 5px;
+  }
+
+  .ajouter a {
+    text-decoration: none;
+    color: #d2c400;
+  }
+
+  @media (max-width: 768px) {
+    .cards {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .card {
+      width: 80%;
+    }
+
+    table, thead, tbody, th, td, tr {
+      display: block;
+    }
+
+    thead tr {
+      display: none;
+    }
+
+    td {
+      padding: 10px;
+      border: none;
+      position: relative;
+      padding-left: 50%;
+    }
+
+    td::before {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 45%;
+      padding-right: 10px;
+      white-space: nowrap;
+      font-weight: bold;
+      color: #333;
+    }
+  }
+
+  .form-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+  }
+  
+  
+
+  .form-section label {
+    font-size: 18px;
+    margin-bottom: 5px; 
+    font-family: Gothic A1;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #0C5E69;
+
+  }
+
+  .form-section input[type="text"], .form-section input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .form-section button {
+    background-color: #065c64;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 104%;
+  }
+
+  .form-section button:hover {
+    background-color: #054d52;
+  }
+
+  a{
+    color: #d2c400;
+    text-decoration: none;
+    margin: 20px 0;
+    font-family: Gothic A1;
+  }

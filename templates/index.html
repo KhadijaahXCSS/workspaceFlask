@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budgetisation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> 
+    <!--#url_for est une fonction de Flask qui génère l'URL pour le fichier CSS dans le dossier static
+    #static est appelle argument et filename => nom du fichier  -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap');
+        </style>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=add_circle" />
+</head>
+<body>
+    {% include 'partials/_header.html' %}
+    
+      <section class="cards">
+        <div class="card">
+          {% if budget %}
+          <h3>Budget</h3>
+          <p>{{ budget }} FCFA</p>
+          {% endif %}
+        </div>
+        <div class="card">
+          {% if depenses %}
+          <h3>Dépenses</h3>
+          <p>{{ depenses_total }} FCFA</p>
+          {% endif %}
+        </div>
+        <div class="card">
+          {% if solde %}
+          <h3>Solde</h3>
+          <p>{{ solde }}</p>
+          {% endif %}
+        </div>
+      </section>
+    
+      <section>
+        {% if depenses %}
+        <h2>Liste des dépenses</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>TITRE</th>
+              <th>MONTANT</th>
+              <th>ACTIONS</th>
+            </tr>
+          </thead>
+          <tbody>
+            {%for depense in depenses%}
+            <tr>
+              <td>{{ depense.titre }}</td>
+              <td>{{ depense.montant }} F CFA</td>
+              <td>{{ depense.date_created }}</td>
+              <td><a href="/supprimer_depense/{{depense.id}}"><button class="btn-delete">supprimer</button></a>
+            </td>
+            </tr>
+            {%endfor%}
+            <tr>
+              <td class="ajouter" colspan="3"><a href="/depense/">AJOUTER DEPENSE <span class="material-symbols-outlined">
+                add_circle
+                </span></a></td>
+            </tr>
+          </tbody>
+        </table>
+      
+      {%else%}
+      <table>
+        <tbody>
+          <tr> 
+            <td colspan="3">Pas de dépenses</td>
+            <td class="ajouter" colspan="3"><a href="/depense/">AJOUTER DEPENSE <span class="material-symbols-outlined">
+              add_circle
+              </span></a></td>
+          </tr>
+        </tbody>
+      </table>
+      
+      
+    {%endif%}
+  </section>
+    
+      <section>
+        {%if revenus %}
+        <h2>Liste des revenus</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>TITRE</th>
+              <th>MONTANT</th>
+              <th>ACTIONS</th>
+            </tr>
+          </thead>
+          <tbody>
+            {%for revenu in revenus%}
+            <tr>
+              <td>{{ revenu.titre }}</td>
+              <td>{{ revenu.montant }} F CFA</td>
+              <td>{{ revenu.date_created }}</td>
+              <td>
+                <a href="/supprimer_revenu/{{revenu.id}}"><button class="btn-delete">supprimer</button></a></td>
+            </tr>
+            {%endfor%}
+            <tr>
+              <td class="ajouter" colspan="3"><a href="/revenu/">AJOUTER REVENU <span class="material-symbols-outlined">
+                add_circle
+                </span></a></td>
+            </tr>
+          </tbody>
+        </table>
+        {%else%}
+        <table>
+          <tbody>
+        <tr>
+          <td colspan="3">Pas de revenus</td>
+          <td class="ajouter" colspan="3"><a href="/revenu/">AJOUTER REVENU <span class="material-symbols-outlined">
+            add_circle
+            </span></a></td>
+        </tr>
+      </tbody>
+      </table>
+        {%endif%}
+      </section>
+    
+</body>
+</html>
